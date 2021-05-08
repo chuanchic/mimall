@@ -38,7 +38,7 @@ export default {
     }
   },
   //清空某个值
-  clear(key, module_name) {
+  clearItem(key, module_name) {
     let val = this.getStorage()
     if (module_name) {
       if (val[module_name]) delete val[module_name][key]

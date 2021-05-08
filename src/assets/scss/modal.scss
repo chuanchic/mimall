@@ -1,43 +1,59 @@
+@import './mixin.scss';
+
+// 外层容器
 .modal{
   @include position(fixed);
   z-index: 10;
+  // 过渡动画
   transition: all .5s;
+  // 遮罩
   .mask{
     @include position(fixed);
     background-color: $colorI;
     opacity: 0.5;
   }
+  // 进入激活
   &.slide-enter-active{
     top:0;
   }
+  // 离开激活
   &.slide-leave-active{
     top:-100%;
   }
+  // 进入之前
   &.slide-enter{
     top:-100%;
   }
+  // 对话框
   .modal-dialog{
     @include position(absolute,40%,50%,660px,auto);
     background-color: $colorG;
+    // 让对话框水平垂直居中
     transform:translate(-50%,-50%);
+    // 头部
     .modal-header{
       height:60px;
       background-color: $colorJ;
       padding:0 25px;
       line-height: 60px;
       font-size:$fontI;
+      // 关闭按钮
       .icon-close{
         @include positionImg(absolute,23px,25px,14px,14px,'/imgs/icon-close.png');
+        // 放大的过渡动画
         transition: transform .3s;
+        // 鼠标放上去，放大
         &:hover{
           transform: scale(1.5);
         }
       }
     }
+    // 内容
     .modal-body{
       padding:42px 40px 54px;
       font-size:14px;
     }
+    // 底部
     .modal-footer{
       height: 82px;
       line-height: 82px;

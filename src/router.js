@@ -10,6 +10,7 @@ import OrderList from './pages/orderList'
 import OrderConfirm from './pages/orderConfirm'
 import OrderPay from './pages/orderPay'
 import AliPay from './pages/alipay'
+import Login from './pages/login'
 
 //加载路由插件
 Vue.use(Router);
@@ -18,7 +19,7 @@ Vue.use(Router);
 export default new Router({
   //配置路由
   routes: [
-    //商品的根组件
+    //商品的根组件`
     {
       path: '/',
       name: 'home',
@@ -48,6 +49,11 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: Cart
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     //订单的根组件
     {
